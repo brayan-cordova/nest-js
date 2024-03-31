@@ -7,4 +7,10 @@ export class NamesService {
   constructor() {
     this._names = [];
   }
+
+  createName(name: string) {
+    this._names.push(name);
+    console.log('Names: ', this._names);
+    return true;
+  }
 }
