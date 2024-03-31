@@ -9,8 +9,16 @@ export class NamesService {
   }
 
   createName(name: string) {
-    this._names.push(name);
-    console.log('Names: ', this._names);
-    return true;
+    const nameFound = this._names.find(
+      (n) => n.toLowerCase().trim() == name.toLowerCase().trim(),
+    );
+
+    if (!nameFound) {
+      this._names.push(name);
+      console.log('Names: ', this._names);
+      return true;
+    } else {
+      return false;
+    }
   }
 }
